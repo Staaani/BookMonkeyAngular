@@ -1,0 +1,28 @@
+<!--
+das html bleibt zum großen teil unverändert.
+mithilfe der direktive ngif zeigen wir den container nur an,
+ wenn tatsächlich ein buch in der komponente vorliegt.
+ auf diese weise können wir das objekt book innerhalb der
+ gruppierung sicher verwenden, ohne bei jeder verwendung zu prüfen,
+ ob das objekt wirklich existiert.
+-->
+
+
+<a *ngIf="book" [routerLink]="book.isbn" class="list-item">
+  <img *ngIf="book.thumbnailUrl" [src]="book.thumbnailUrl" alt="Cover">
+
+  <h2>{{book.title}}</h2>
+
+  <p role="doc-subtitle" *ngIf="book.subtitle">
+    {{book.subtitle}}
+  </p>
+
+  <ul class="comma-list">
+    <li *ngFor="let author of book.authors">
+      {{author}}
+    </li>
+  </ul>
+
+  <div>ISBN {{book.isbn}}</div>
+
+</a>
