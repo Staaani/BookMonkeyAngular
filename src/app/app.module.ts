@@ -8,6 +8,8 @@ import {HomeComponent} from './home/home.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { SearchComponent } from './search/search.component';
 import {AuthInterceptor} from "./shared/auth.interceptor";
+import {FormsModule} from "@angular/forms";
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {AuthInterceptor} from "./shared/auth.interceptor";
     BrowserModule,
     AppRoutingModule,
     BooksModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    AdminModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

@@ -38,6 +38,11 @@ export class BookStoreService {
     return this.http.delete(`${this.apiURL}/books/${isbn}`);
   }
 
+  create(book: Book): Observable<Book> {
+    return this.http
+      .post<Book>(`${this.apiURL}/books`, book);
+  }
+
 }
 
 
