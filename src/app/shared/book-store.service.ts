@@ -43,6 +43,14 @@ export class BookStoreService {
       .post<Book>(`${this.apiURL}/books`, book);
   }
 
+  update(book: Book): Observable<Book> {
+    return this.http.put<Book>(
+      `${this.apiURL}/books/${book.isbn}`,
+      book,
+    );
+
+  }
+
 }
 
 
